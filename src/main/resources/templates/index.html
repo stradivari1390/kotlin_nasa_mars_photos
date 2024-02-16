@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mars Rover Photos</title>
+    <link rel="stylesheet" href="/css/index_styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to Mars Rover Photos</h1>
+    <p>Enter a Martian sol or an Earth date to fetch photos:</p>
+
+    <!-- Form for sol -->
+    <form action="/mars-photos" method="get">
+        <div>
+            <label for="sol">Martian Sol (Solar Day):</label>
+            <input type="number" id="sol" name="sol" min="0">
+        </div>
+        <button type="submit">Fetch Photos by Sol</button>
+    </form>
+
+    <!-- Form for Earth date -->
+    <form action="/mars-photos" method="get">
+        <div>
+            <label for="earthDate">Earth Date (YYYY-MM-DD):</label>
+            <input type="date" id="earthDate" name="earthDate">
+        </div>
+        <button type="submit">Fetch Photos by Earth Date</button>
+    </form>
+</div>
+</body>
+</html>

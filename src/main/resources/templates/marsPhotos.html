@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Include Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Nasa Mars Photos</title>
+    <!-- Your existing styles -->
+</head>
+<body>
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div th:each="photo : ${photos}" class="swiper-slide">
+            <img th:src="${photo.imgSrc}" alt="Mars Photo" height="500"
+                 style="display: block; margin-left: auto; margin-right: auto;">
+            <div class="photo-info">
+                <p>Rover: <span th:text="${photo.rover.getName()}"></span></p>
+                <p>Camera: <span th:text="${photo.camera.getName()}"></span></p>
+                <p>Sol: <span th:text="${photo.sol}"></span> Date: <span th:text="${photo.earthDate}"></span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+<button onclick="window.location.href='/'">To the main page</button>
+<!-- Include Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
